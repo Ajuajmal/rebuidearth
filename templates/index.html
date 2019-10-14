@@ -1,0 +1,401 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Hero Image and Title -->
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-vcentered">
+
+      <!-- Landing page Title -->
+      <div class="column is-5 landing-caption">
+        <h1 class="title is-1 is-light is-semibold is-spaced main-title">Do What You Love, <br> Help Along The Way</h1>
+        <h2 class="subtitle is-6 is-light is-thin">
+          Using technology to make the World more habitable.
+        </h2>
+        <!-- CTA -->
+        <p>
+          <a href="#start" class="button k-button k-primary raised has-gradient is-fat is-bold">
+            <span class="text">Learn About OpenHack</span>
+            <span class="front-gradient"></span>
+          </a>
+        </p>
+
+      </div>
+      <!-- Hero image -->
+      <div class="column is-7">
+        <figure class="image">
+          <img src="{% static 'img/illustrations/world.svg' %}" alt="">
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hero footer -->
+<div class="hero-foot">
+  <div class="container">
+    <div class="tabs is-centered">
+      <!-- Client / partner list -->
+      <ul>
+
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+<!-- /Landing page Hero -->
+
+<!-- Icon Features section -->
+<section id="start" class="section is-transparent is-relative">
+  <!-- Container -->
+  <div class="container">
+
+    <div class="has-text-centered">
+
+    </div>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper is-medium">
+      <div class="columns is-vcentered">
+        <!-- Feature -->
+        <div class="column is-4">
+          <div class="feature">
+            <img src="{% static 'img/icons/chained.svg' %}" alt="" data-aos="fade-up" data-aos-delay="100" data-aos-offset="200" data-aos-easing="ease-out-quart">
+            <h4 class="title is-6 is-tight is-light">One Click</h4>
+            <!-- <p>Supercharged features to make you happy and lorem ipsum sit dolor amet</p>-->
+          </div>
+        </div>
+        <!-- Feature -->
+        <div class="column is-4">
+          <div class="feature">
+            <img src="{% static 'img/icons/stacked.svg' %}" alt="" data-aos="fade-up" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-out-quart">
+            <h4 class="title is-6 is-tight is-light">Scale Efficiently</h4>
+            <!-- <p>Supercharged features to make you happy and lorem ipsum sit dolor amet</p>-->
+          </div>
+        </div>
+        <!-- Feature -->
+        <div class="column is-4">
+          <div class="feature">
+            <img src="{% static 'img/icons/compact.svg' %}" alt="" data-aos="fade-up" data-aos-delay="500" data-aos-offset="200" data-aos-easing="ease-out-quart">
+            <h4 class="title is-6 is-tight is-light">Manage Everything</h4>
+            <!-- <p>Supercharged features to make you happy and lorem ipsum sit dolor amet</p>-->
+          </div>
+        </div>
+      </div>
+
+      <!-- Play video button
+                        <div class="cta-wrapper has-text-centered">
+                            <div class="video-button levitate js-modal-btn" data-video-id="6WG7D47tGb0">
+                                <img src="assets/images/icons/play.svg" alt="">
+                            </div>
+                        </div> -->
+    </div>
+    <!-- Content wrapper -->
+  </div>
+  <!-- /Container -->
+</section>
+<!-- /Icon Features section -->
+
+<!-- Side Features section -->
+<section id="big-gradient" class="section is-transparent">
+  <!-- Container -->
+  <div class="container">
+    <!-- Divider -->
+    <div class="divider is-centered"></div>
+    <!-- Title & subtitle -->
+    <h2 class="title is-light is-semibold has-text-centered is-spaced">Our Aim</h2>
+    <h4 class="subtitle is-6 is-light has-text-centered is-compact">Building a one stop solution for managing an unnexpected disaster </h4>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper is-large">
+      <div class="columns is-vcentered">
+
+        <!-- Feature content -->
+        <div class="column is-5 is-offset-1">
+          <div class="side-feature-content">
+
+            <h3 class="title is-4 is-light"><span>One Click Deployment</span></h3>
+            <div class="divider is-long"></div>
+            <p class="is-light">
+              A One click SAAS option to manage everything, Scalable and highly efficient.
+            </p>
+            <div class="cta-wrapper">
+              <!--<a href="token.html" class="button k-button k-primary raised has-gradient is-bold">
+                                            <span class="text">Learn More</span>
+                                            <span class="front-gradient"></span>
+                                        </a>-->
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature image -->
+        <div class="column is-7">
+          <img class="side-feature" src="{% static 'img/illustrations/crypto-mining.svg' %}" alt="">
+        </div>
+      </div>
+
+      <div class="columns is-vcentered">
+        <!-- Feature image desktop -->
+        <div class="column is-7 is-hidden-mobile">
+          <img class="side-feature" src="{% static 'img/illustrations/blockchain-blocks.svg' %}" alt="">
+        </div>
+
+        <!-- Feature content -->
+        <div class="column is-5">
+          <div class="side-feature-content">
+
+            <h3 class="title is-4 is-light"><span>Respond Efficiently</span></h3>
+            <div class="divider is-long"></div>
+            <p class="is-light">Use one single platform to create multiple views , Respond to requests , Log Requirements and many other things</p>
+            <div class="cta-wrapper">
+              <!-- <a href="#" class="button k-button k-primary raised has-gradient is-bold">
+                                            <span class="text">Whitepaper</span>
+                                            <span class="front-gradient"></span>
+                                        </a>-->
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature image only for mobile -->
+        <div class="column is-7 is-hidden-desktop is-hidden-tablet">
+          <img class="side-feature" src="{% static 'img/illustrations/blockchain-blocks.svg' %}" alt="">
+        </div>
+      </div>
+
+      <div class="columns is-vcentered">
+        <!-- Feature content -->
+        <div class="column is-5 is-offset-1">
+          <div class="side-feature-content">
+
+            <h3 class="title is-4 is-light"> <span>Free and Open Source </span></h3>
+            <div class="divider is-long"></div>
+            <p class="is-light">Its all Open Source and Free to use for anyone anywhere</p>
+            <div class="cta-wrapper">
+              <!--<a href="#" class="button k-button k-primary raised has-gradient is-bold">
+                                            <span class="text">Join the ICO</span>
+                                            <span class="front-gradient"></span>
+                                        </a>-->
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature image -->
+        <div class="column is-7">
+          <img class="side-feature" src="{% static 'img/illustrations/ico-shares.svg' %}" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- /Content wrapper -->
+  </div>
+  <!-- /Container -->
+</section>
+<!-- /Side Features section -->
+
+
+<!-- Roadmap section -->
+<section class="section is-medium is-dark">
+  <!-- Container -->
+  <div class="container">
+    <!-- Divider -->
+    <div class="divider is-centered"></div>
+    <!-- Title & subtitle -->
+    <h2 class="title is-light is-semibold has-text-centered is-spaced">Our Roadmap</h2>
+    <h4 class="subtitle is-6 is-light has-text-centered is-compact">
+      < Insert some Content about keralarescue here>
+    </h4>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <!-- Timeline -->
+      <div class="krypton-timeline">
+        <div class="timeline">
+          <!-- Events wrapper -->
+          <div class="events-wrapper">
+            <!-- Events list -->
+            <div class="events">
+              <ol>
+                <!-- Event -->
+                <li>
+                  <a href="#0" data-date="16/01/2018" class="selected">
+                    <span>AUG'18</span>
+                    <span></span>
+                  </a>
+                </li>
+                <!-- Event -->
+                <li>
+                  <a href="#0" data-date="28/04/2018">
+                    <span>AUG'19</span>
+                    <span></span>
+                  </a>
+                </li>
+                <!-- Event -->
+                <li>
+                  <a href="#0" data-date="20/05/2018">
+                    <span>OCT'19</span>
+                    <span></span>
+                  </a>
+                </li>
+                <!-- Event -->
+                <li>
+                  <a href="#0" data-date="20/01/2019">
+                    <span>YTD</span>
+                    <span></span>
+                  </a>
+                </li>
+                <!-- Event -->
+
+
+              </ol>
+
+              <!-- Track line -->
+              <span class="filling-line" aria-hidden="true"></span>
+            </div>
+            <!-- Events list -->
+          </div>
+          <!-- Events wrapper -->
+
+          <ul class="timeline-navigation">
+            <li><a href="#0" class="prev inactive">Prev</a></li>
+            <li><a href="#0" class="next">Next</a></li>
+          </ul> <!-- .cd-timeline-navigation -->
+        </div> <!-- .timeline -->
+
+        <!-- Main events content -->
+        <div class="events-content">
+          <ol>
+            <!-- Event -->
+            <li class="selected" data-date="16/01/2018">
+              <!-- Inner -->
+              <div class="inner-wrapper">
+                <div class="title-wrapper">
+                  <!-- Icon -->
+                  <img src="{% static 'img/icons/ico/platform-launch.svg' %}" alt="">
+                  <!-- Title & date -->
+                  <div>
+                    <span class="event-title">First Launch</span>
+                    <small>January 16th, 2018</small>
+                  </div>
+                </div>
+                <p>
+                  Lots of Content Here
+                </p>
+              </div>
+            </li>
+
+            <!-- Event -->
+            <li data-date="28/04/2018">
+              <div class="inner-wrapper">
+                <div class="title-wrapper">
+                  <img src="{% static 'img/icons/ico/platform-launch.svg' %}" alt="">
+                  <div>
+                    <span class="event-title">Second Launch</span>
+                    <small>February 28th, 2018</small>
+                  </div>
+                </div>
+                <p>
+                  Lots of Content Here
+                </p>
+              </div>
+            </li>
+
+            <!-- Event -->
+            <li data-date="20/05/2018">
+              <div class="inner-wrapper">
+                <div class="title-wrapper">
+                  <img src="{% static 'img/icons/ico/platform-launch.svg' %}" alt="">
+                  <div>
+                    <span class="event-title">Openhack 1.0</span>
+                    <small>February 28th, 2018</small>
+                  </div>
+                </div>
+                <p>
+                  Lots of Content Here
+                </p>
+              </div>
+            </li>
+
+            <!-- Event -->
+            <li data-date="20/01/2019">
+              <div class="inner-wrapper">
+                <div class="title-wrapper">
+                  <img src="{% static 'img/icons/ico/platform-launch.svg' %}" alt="">
+                  <div>
+                    <span class="event-title">Phase 2</span>
+                    <small>April 20th, 2018</small>
+                  </div>
+                </div>
+                <p>
+                  Lots of Content Here
+                </p>
+              </div>
+            </li>
+
+          </ol>
+        </div> <!-- .events-content -->
+      </div>
+      <!-- Timeline -->
+
+    </div>
+  </div>
+  <!-- /Container -->
+</section>
+<!-- /Roadmap section -->
+
+<!-- App section -->
+<section class="section is-medium is-darkest">
+  <!-- Container -->
+  <div class="container">
+    <!-- Divider -->
+    <div class="divider is-centered"></div>
+    <!-- Title -->
+    <h2 class="title is-light is-semibold has-text-centered is-spaced">KeralaRescue</h2>
+    <h4 class="subtitle is-6 is-light has-text-centered is-compact">keralarescue.in helped in building a community that laid the foundation of rebuildearth. The idea of a single platform for managing requirements in the case of a national level
+      disaster was brought by this community.
+    </h4>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper is-large">
+
+      <!-- Row -->
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <!-- Side feature -->
+          <div class="side-feature-content">
+            <!-- Title -->
+            <h3 class="title is-4 is-light" align=center> What KeralaRescue Did?</h3>
+            <!-- Divider -->
+            <div class="divider is-long"></div>
+            <p class="is-light">Entha Ippo Paraya
+            </p>
+            <!-- CTA -->
+            <div class="cta-wrapper">
+              <a href="https://keralarescue.in" class="button k-button k-primary raised has-gradient is-fat is-bold">
+                <span class="text">Visit KeralaRescue</span>
+                <span class="front-gradient"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Featured image -->
+        <div class="column is-7">
+          <p align=center style="font-size:70px ;font-weight:bolder ; color:whitesmoke" class="title">Kerala<span style="font-weight:10;color:grey">Rescue </span>
+
+            <p>
+        </div>
+      </div>
+
+    </div>
+    <!-- /Content wrapper -->
+  </div>
+  <!-- /Container -->
+</section>
+<!-- /App section -->
+
+
+
+</div>
+
+{% endblock %}
