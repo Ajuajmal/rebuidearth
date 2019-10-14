@@ -1,8 +1,9 @@
-# rebuildearth.org
-rebuildearth.org website
-### Rebuild Earth Disaster Management , Awareness and Alertness Platform
+### rebuildearth.org Website
+Rebuild Earth Disaster Management , Awareness and Alertness Platform
 
 # Quick Run !
+
+### for production env - copy the .env.sample contents to .env and then update the variable's based on server configs
 
 ### Run the website in a local env
 
@@ -12,7 +13,7 @@ rebuildearth.org website
 
   `git clone https://github.com/<username>/rebuidearth`
 
-  (change the <username> with your username)
+  (change the `<username>` with your username)
 
   `cd rebuidearth`
 - create a virtual env and activate
@@ -23,8 +24,8 @@ rebuildearth.org website
 - install requirements
 
   `pip install -r requirements.txt`
-- Creat a .env file and copy contents of .env.sample
-  (variables for Django project settings)
+- Create a .env file and copy contents of .env.sample
+  (`variables` for Django project settings)
 
   `touch .env`
 
@@ -34,7 +35,6 @@ rebuildearth.org website
   `python3 manage.py makemigrations`
 
   `python3 manage.py migrate`
-
 - run the server
 
   `python3 manage.py runserver`
