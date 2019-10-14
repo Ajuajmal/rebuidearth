@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import sys  # required for keeping secret_key
+from decouple import config, Csv # for keeping safe the production env from dev env
+import dj_database_url # for keeping safe the dburls and credentials
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -19,13 +21,35 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^6)2@8uzc**b^%4+1pnhw+-4rv*#&z_0^4k=bwu)%!zzps36_^'
+#Security key generation_block:
+def find_or_create_secret_key():
+    """
+    Look for secret_key.py and return the SECRET_KEY
+    entry in it if the file exists.
+    Otherwise, generate a new secret key , save it in,
+    secret_key.py, and return the key.
+    """
+    SECRET_KEY_DIR = os.path.dirname(__file__)
+    SECRET_KEY_FILEPATH = os.path.join(SECRET_KEY_DIR, 'secret_key.py')
+    sys.path.insert(1, SECRET_KEY_DIR)
 
+    if os.path.isfile(SECRET_KEY_FILEPATH):
+        from secret_key import SECRET_KEY
+        return SECRET_KEY
+    else:
+        from django.utils.crypto import get_random_string
+        chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*(-_=+)'
+        new_key = get_random_string(50, chars)
+        with open(SECRET_KEY_FILEPATH, 'w') as f:
+            f.write("# Django secret key\n# Do NOT check this into versioncontrol.\n\nSECRET_KEY = '%s'\n" % new_key)
+            from secret_key import SECRET_KEY
+            return SECRET_KEY
+
+SECRET_KEY = find_or_create_secret_key()
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -54,7 +78,9 @@ ROOT_URLCONF = 'rebuildearth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,10 +100,9 @@ WSGI_APPLICATION = 'rebuildearth.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 
@@ -113,10 +138,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+#EmailBackend
+
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 MEDIA_URL = '/media/'
